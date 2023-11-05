@@ -8,7 +8,7 @@ Algoritmo TP
 	equipajeBodega=""
 	numPasajeroFrec=""
     dimFila1=120
-    dimFila2=120
+    dimFila2=80
     dimColumnas=6
     contRuta1=0
     contRuta2=0
