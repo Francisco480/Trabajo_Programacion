@@ -33,7 +33,7 @@ Algoritmo TP
         leer option
         option = Mayusculas(option)
         Mientras ((option<"1" o option>"5") y option<>"SALIR") Hacer
-            Escribir ("Opción incorrecta")
+            Escribir ("Opción incorrecta, vuelva a ingresar")
             Escribir("1- Venta pasaje")
             Escribir("2- Buscar pasaje vendido")
             Escribir("3- Buscar pasajero")
@@ -181,16 +181,22 @@ SubProceso ReservaPasaje(contRuta,array Por Referencia,dimColumnas,dimFila,nombr
 					
 					array[contRuta,j] = ConvertirATexto(contRuta+1)
 				1:
-					escribir ("Ingrese nombre y apellido")
-					leer nombreApellido
+					Repetir
+						escribir("Ingrese nombre y apellido")
+						leer nombreApellido
+						
+					Mientras Que Longitud(nombreApellido) <= Longitud("2")
 					array[contRuta,j] = nombreapellido
 				2:
 					escribir ("Ingrese dni")
 					leer dni
 					array[contRuta,j] = dni
 				3:
-					escribir ("Ingrese telefono")
-					leer tel
+					Repetir
+						Escribir "Ingrese un tel con mas de 6 digitos y menores a 12 digitos"
+						leer tel
+						
+					Mientras Que ConvertirANumero(tel) < 999999 o ConvertirANumero(tel) > 999999999999
 					array[contRuta,j] = tel
 				4:
 					Repetir
@@ -201,8 +207,12 @@ SubProceso ReservaPasaje(contRuta,array Por Referencia,dimColumnas,dimFila,nombr
 					
 					array[contRuta,j] = Mayusculas(equipajeBodega)
 				5:
-					escribir ("Ingrese número de pasajero frecuente")
-					leer numPasajeroFrec
+					Repetir
+						Escribir "Ingrese un numero frecuente de pasajero de 3 digitos"
+						leer numPasajeroFrec
+						
+						
+					Mientras Que ConvertirANumero(numPasajeroFrec) <= 99 o ConvertirANumero(numPasajeroFrec) > 999
 					array[contRuta,j] = numPasajeroFrec
 					
 			Fin Segun
